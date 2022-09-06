@@ -11,10 +11,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Install Protobuf Compiler
-        run: apt install -y protobuf-compiler
-
       - uses: actions/checkout@v2
+      - uses: abelfodil/protoc-action@v1
+        with:
+          protoc-version: '3.13.0'
+          enable-dart: true
+          dart-version: '2.9.2'
 
       - name: Cache cargo registry
         uses: actions/cache@v1
