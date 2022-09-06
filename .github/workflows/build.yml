@@ -11,6 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: abelfodil/protoc-action@v1
+        with:
+          protoc-version: '3.13.0'
+          enable-dart: true
+          dart-version: '2.9.2'
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal
@@ -41,6 +46,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
+      - uses: abelfodil/protoc-action@v1
+        with:
+          protoc-version: '3.13.0'
+          enable-dart: true
+          dart-version: '2.9.2'
       - uses: actions-rs/toolchain@v1
         with:
           profile: minimal

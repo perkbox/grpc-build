@@ -12,6 +12,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+      - uses: abelfodil/protoc-action@v1
+        with:
+          protoc-version: '3.13.0'
+          enable-dart: true
+          dart-version: '2.9.2'
 
       - name: Cache cargo registry
         uses: actions/cache@v1
@@ -42,7 +47,7 @@ jobs:
 
       - name: Compile to binary
         run: cargo install --path .
-      
+
       - name: Copy the binary
         run: cp ~/.cargo/bin/grpc_build ./grpc-build
 
